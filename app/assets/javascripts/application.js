@@ -25,5 +25,7 @@ $(document).ready(function(){
     	placeholder_text_multiple: "Select Role(s)",
       	no_results_text: "Oops, nothing found!"
     })
+    
+    
 });
 
