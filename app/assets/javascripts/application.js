@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require jquery.dataTables.min
+//= require_tree .
+
+$(document).ready(function(){
+    $('#users_table').DataTable();
+});
 

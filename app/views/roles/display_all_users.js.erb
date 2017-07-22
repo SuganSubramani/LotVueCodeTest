@@ -1,0 +1,8 @@
+$('#disp_users').html("<%= escape_javascript (render partial: 'users/display_users',:object => @users) %>");
+$(document).ready(function(){
+    $('#roles_table').DataTable();
+    $('#users_table').DataTable();
+    $('#show_user').click(function() {
+    	return $.ajax({url: "/roles/display_all_users"});
+    });
+});
