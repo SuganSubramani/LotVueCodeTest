@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   	if @user.save
   		redirect_to @user
   	else
-  		p @user.errors
   		render action: 'new'
   	end
   end

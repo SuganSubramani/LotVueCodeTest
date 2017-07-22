@@ -23,6 +23,6 @@
 	<div class="col-md-3">
 		<b>Role </b>
 	</div>
-	<div class="col-md-7"><%=raw @user.roles.map { |e| link_to(e.name, e) }.join(' ,') %></div>
+	<div class="col-md-7"><%=raw @user.roles.map { |e| e.present? ? link_to(e.name, e) : '' }.join(' ,') %></div>
 </div>
 
