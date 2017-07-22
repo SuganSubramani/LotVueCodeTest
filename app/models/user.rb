@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	include ActiveModel::ForbiddenAttributesProtection
 	has_many :user_roles
 	has_many :roles, :through => :user_roles
 	validates_presence_of :first_name,:last_name,:email
