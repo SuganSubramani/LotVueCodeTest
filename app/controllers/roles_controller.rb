@@ -36,7 +36,7 @@ class RolesController < ApplicationController
   def display_all_users
   	@users = User.where('id not in (?)',UserRole.all.map(&:id))
   end
-  def hide_roles
+  def hidden_roles
   	@roles = Role.all
   end
 

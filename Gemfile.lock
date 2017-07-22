@@ -32,6 +32,10 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.1.4)
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -117,6 +121,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  chosen-rails
   coffee-rails (~> 4.0.0)
   coffee-script-source
   execjs

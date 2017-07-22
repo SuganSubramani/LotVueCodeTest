@@ -1,0 +1,30 @@
+<h1>Roles</h1>
+
+<p><%=link_to 'Add New Role', new_role_path, :class => "btn btn-xs btn-primary" %> | <%=link_to 'Hide Roles', new_role_path, :class => "btn btn-xs btn-primary" %></p>
+<div class="row">
+	<div class="col-md-5">
+		<% if @roles.present? %>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Hidden</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @roles.each do |role| %>
+							<% form_for url_for(:controller => 'roles', :action => 'update_hidden_values'), :method => 'get' do |f|%>
+								<tr>
+									<td><%= role.name %></td>
+									<td><%= check_box_tag :is_hidden, {:class => "hidden_option"} %></td>
+								</tr>
+							<% end %>
+						<% end %>
+					</tbody>
+				</table>
+			<% end %>
+		<% else %>
+			No Records Found
+		<% end %>
+	</div>
+</div>

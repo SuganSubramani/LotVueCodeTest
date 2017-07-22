@@ -15,9 +15,15 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require jquery.dataTables.min
+//= require chosen-jquery
 //= require_tree .
 
 $(document).ready(function(){
     $('#users_table').DataTable();
+    $('#user_role_ids').chosen({
+    	width: '200px',
+    	placeholder_text_multiple: "Select Role(s)",
+      	no_results_text: "Oops, nothing found!"
+    })
 });
 
