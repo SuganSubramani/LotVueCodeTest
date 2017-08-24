@@ -40,7 +40,7 @@
 			  <div class="form-group">
 			    <label for="name" class="col-sm-2 control-label">Role</label>
 			    <div class="col-sm-4">
-			    	<%= f.collection_select(:role_ids, 
+			    	<%= f.collection_select(:roles, 
               			Role.all, 
               			:id, :name, {:prompt => true}, {:multiple => true}) %>
 			    </div>
