@@ -4,3 +4,4 @@
 
 $(document).ready ->
 	$('#users_table').DataTable()
+	$('#user_role_ids').chosen();

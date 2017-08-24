@@ -17,16 +17,20 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
+    logger.info user_params
   	if @user.save
   		redirect_to @user
   	else
-  		p @user.errors
+  		puts @user.errors
   		render action: 'new'
   	end
   end
 
   def update
   	@user = User.find(params[:id])
+    logger.info user_params
+    puts user_params
+    puts @user
   	if @user.update_attributes(user_params)
   		redirect_to @user
   	else
@@ -37,6 +41,6 @@ class UsersController < ApplicationController
 
   private
   	def user_params
-  		params.require(:user).permit(:first_name,:last_name,:email,:role_ids => [])
+  		params.require(:user).permit(:first_name,:last_name,:email,:roles,role_ids: [])
   	end
 end

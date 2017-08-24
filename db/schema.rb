@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170722072239) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
-    t.boolean  "is_hidden",  default: false
+    t.boolean  "is_checked", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
