@@ -47,7 +47,8 @@ class UsersController < ApplicationController
   	# end
     def user_params
       params.require(:user).permit(:first_name,:last_name,:email).tap do |whitelisted|
-      whitelisted[:role_ids] = params[:user][:role_ids]
+        p params[:user][:role_ids].reject { |c| c.empty? }
+      whitelisted[:role_ids] = params[:user][:role_ids].reject { |c| c.empty? }
     end
 end
 end
