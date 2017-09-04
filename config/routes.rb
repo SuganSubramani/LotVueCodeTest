@@ -17,6 +17,7 @@ LotVueCodeTest::Application.routes.draw do
       collection do
         get 'hidden_roles'
         get "display_all_users"
+        get "update_hidden_values"
       end
     end
 

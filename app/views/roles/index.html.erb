@@ -1,6 +1,6 @@
 <h1>Roles</h1>
 
-<p><%=link_to 'Add New Role', new_role_path, :class => "btn btn-xs btn-primary" %> | <%=link_to 'Hide Roles', new_role_path, :class => "btn btn-xs btn-primary" %> | <%=link_to 'Add New User', new_user_path, :class => "btn btn-xs btn-primary" %> | <%=link_to 'Show All Users', '#', :class => "btn btn-xs btn-primary", :id => "show_user" %></p>
+<p><%=link_to 'Add New Role', new_role_path, :class => "btn btn-xs btn-primary" %> | <%=link_to 'Hide Roles', hidden_roles_roles_path, :class => "btn btn-xs btn-primary" %> | <%=link_to 'Add New User', new_user_path, :class => "btn btn-xs btn-primary" %> | <%=link_to 'Show All Users', '#', :class => "btn btn-xs btn-primary", :id => "show_user" %></p>
 <div class="row" >
 	<div class="col-md-8">
 		<% if @roles.present? %>
@@ -14,7 +14,7 @@
 				<tbody>
 					<% @roles.each do |role| %>
 						<tr>
-							<td><%= role.name %></td>
+							<td><%=link_to role.name,role %></td>
 							<td><%=link_to 'Edit', edit_role_path(role) %></td>
 						</tr>
 					<% end %>

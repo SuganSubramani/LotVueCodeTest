@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722072239) do
+ActiveRecord::Schema.define(version: 20170722092822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "roles", force: true do |t|
     t.string   "name"
-    t.boolean  "is_checked", default: true
+    t.boolean  "is_hidden",  default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

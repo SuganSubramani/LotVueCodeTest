@@ -34,13 +34,20 @@ class UsersController < ApplicationController
   	if @user.update_attributes(user_params)
   		redirect_to @user
   	else
-  		render action: edit
+  		render action: 'edit'
   	end
   end
   
 
   private
-  	def user_params
-  		params.require(:user).permit(:first_name,:last_name,:email,:roles => [:id])
-  	end
+  	# def user_params
+   #    p 'user params'
+   #    p params[:user][:role_ids].compact
+  	# 	params.require(:user).permit(:first_name,:last_name,:email,:role_ids => [])
+  	# end
+    def user_params
+      params.require(:user).permit(:first_name,:last_name,:email).tap do |whitelisted|
+      whitelisted[:role_ids] = params[:user][:role_ids]
+    end
+end
 end
